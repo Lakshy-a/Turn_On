@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turn On Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <style>
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            color: black;
+            cursor: pointer;
+        }
+
+        .slider-nav-prev {
+            left: 1rem;
+        }
+
+        .slider-nav-next {
+            right: 1rem;
+        }
+
+        .dots {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: -1px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            margin: 0 5px;
+            background-color: rgb(222, 60, 87);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: white;
+        }
+
+        .transition-opacity {
+            transition: opacity 0.3s ease;
+        }
+
+        .new-slider-nav {
+            padding: 10px;
+            z-index: 10;
+            top: 30%
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <picture>
+        <source srcset="/BannerImages/mobile.webp" media="(max-width: 640px)">
+        <img src="/BannerImages/desktop.jpg" alt="Responsive Image" class="w-full h-auto">
+    </picture>
+
+    <!-- Main Content Section -->
+    <section class="py-8">
+        <div class="container mx-auto flex flex-col justify-center items-center mt-4">
+            <h2 class="text-center w-3/5 text-3xl md:text-4xl font-black mb-6 uppercase">
+                Crafted for Your Wildest Dreams
+            </h2>
+            <p class="text-center mb-6 text-lg md:text-xl w-96 md:w-3/5 font-light leading-7">
+                It all starts with a naughty glance, a whisper of anticipation. You
+                laugh, tease and explore each other's desires as you flip through the
+                cards of Turn On. The game makes every move, every kiss and every
+                whisper of your secret desires feel like a thrilling discovery.
+            </p>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section class="bg-black py-12 flex flex-col md:flex-row gap-8 items-center justify-center">
+        <div class="w-1/2 sm:w-2/5 flex flex-col items-center justify-center">
+            <div class="slider w-80 h-fit relative ">
+                <div class="slides">
+                    <div class="slide flex justify-center items-center h-fit">
+                        <img src="/SliderImages/SliderImage1.png" alt="slider1" class="w-48 h-48" />
+                    </div>
+                    <div class="slide flex justify-center items-center h-fit">
+                        <img src="/SliderImages/SliderImage2.png" alt="slider2" class="w-48 h-48" />
+                    </div>
+                    <div class="slide flex justify-center items-center h-fit">
+                        <img src="/SliderImages/SliderImage3.png" alt="slider3" class="w-48 h-48" />
+                    </div>
+                    <div class="slide flex justify-center items-center h-fit">
+                        <img src="/SliderImages/SliderImage4.png" alt="slider4" class="w-48 h-48" />
+                    </div>
+                    <div class="slide flex justify-center items-center h-fit">
+                        <img src="/SliderImages/SliderImage5.png" alt="slider5" class="w-48 h-48" />
+                    </div>
+                </div>
+                <div class="slider-nav slider-nav-prev relative">
+                    <span class="material-symbols-outlined text-white">arrow_back_ios</span>
+                </div>
+                <div class="slider-nav slider-nav-next relative">
+                    <span class="material-symbols-outlined text-white">arrow_forward_ios</span>
+                </div>
+            </div>
+            <div class="dots-container">
+                <div class="dots"></div>
+            </div>
+        </div>
+        <div class="w-full sm:w-4/5 md:w-3/5 lg:w-2/3 flex flex-col pb-3">
+            <div class="h-fit w-full">
+                <h3 class="h-fit bg-black uppercase text-2xl font-bold text-white pl-7">Durex playthings turn on game
+                    card for couples</h3>
+                <p class="uppercase text-white font-thin text-md w-full pl-7 pt-4 pr-7">
+                    Are you ready to spice up your game nights with "Turn On" - the flirty card game that takes Truth or
+                    Dare to the next level?
+                    With 60 cards filled with fun, flirty and risqué questions and actions, it is crafted for you to
+                    express your deepest desires
+                    and then bring them alive. As you lay the cards, get ready to lay your desires for them to know all
+                    your secrets.
+                    There are no losers in this game, only winners. So, come together with your partner, and let the
+                    moments unfold with "Turn On"!
+                </p>
+            </div>
+            <div class="mt-5 flex flex-col gap-4 sm:flex-row items-start sm:items-center p-7">
+                <div>
+                    <span class="text-white text-2xl line-through">Rs. 1999/-</span>
+                    <span class="text-white text-2xl ml-4 sm:ml-4 font-bold">Rs. 999/-</span>
+                    <span class="text-white bg-red-500 py-1 px-4 rounded font-bold mt-2 sm:mt-0 ml-4 sm:ml-4">50% OFF</span>
+                </div>
+                
+                <button class="cursor-pointer bg-white px-3 py-1 rounded-3xl uppercase font-bold	">ADD To CART</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-4 h-fit w-full">
+        <div class="mx-auto px-2 text-center flex justify-center">
+            <h2 class="text-2xl lg:text-4xl mb-6 uppercase font-extrabold w-9/12">
+                Flip the Cards and <br>Let Your Desires Unfold
+            </h2>
+        </div>
+    </section>
+
+    <section class="bg-black py-1 h-fit flex items-center justify-center">
+      <video class="w-4/5 h-4/5 flex items-center justify-center">
+        <source src="/0f0c9ade19d14ab6a87540ceb9f97916.mp4" type="video/mp4">
+    </video>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="py-8">
+        <div class="container mx-auto text-center uppercase flex justify-center mb-4 flex-col-small">
+            <h2 class="text-2xl lg:text-4xl font-extrabold mb-6 w-9/12 w-full-small">
+                Level up from fun and flirty to risque and feel the rush of your
+                wildest dreams!
+            </h2>
+        </div>
+        <div class="flex justify-center flex-col-small items-center">
+            <!-- For large screens, show the grid layout -->
+            <div class="hidden sm:flex flex-wrap justify-center">
+                <div class="flex flex-col items-center justify-center mr-8 w-full-small mb-8">
+                    <div class="w-56 h-80 relative">
+                        <img src="/front and back Cards/funCardBack.jpg" alt="Fun Card Back"
+                            class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                        <img src="/front and back Cards/funCardFront.webp" alt="Fun Card Front"
+                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                    </div>
+                    <div class="mt-5 flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-extrabold mt-4">Fun Cards</h3>
+                        <p class="mt-4 w-48 text-center font-thin text-xl">
+                            20 Fun Cards to spark the romance
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center mx-16 w-full-small mb-8">
+                    <div class="w-56 h-80 relative">
+                        <img src="/front and back Cards/flirtCardBack.jpg" alt="Flirty Card Back"
+                            class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                        <img src="/front and back Cards/flirtCardFront.webp" alt="Flirty Card Front"
+                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                    </div>
+                    <div class="mt-5 flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-extrabold mt-4">Flirty Cards</h3>
+                        <p class="mt-4 w-48 text-center font-thin text-xl">
+                            20 Flirty Cards to get up close and intimate
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center mx-8 w-full-small mb-8">
+                    <div class="w-56 h-80 relative">
+                        <img src="/front and back Cards/RisqueCardback.jpg" alt="Risqué Card Back"
+                            class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                        <img src="/front and back Cards/RisqueCardfront.webp" alt="Risqué Card Front"
+                            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                    </div>
+                    <div class="mt-5 flex flex-col justify-center items-center">
+                        <h3 class="text-2xl font-extrabold mt-4">Risqué Cards</h3>
+                        <p class="mt-4 w-48 text-center font-thin text-xl">
+                            20 Risqué Cards to drive each other wild
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- For small screens, show the slider -->
+            <div class="sm:hidden relative w-full">
+                <div class="slider relative overflow-hidden">
+                    <div id="slides" class="slides flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="slide flex flex-col items-center justify-center w-full">
+                            <div class="w-56 h-80 relative mx-auto">
+                                <img src="/front and back Cards/funCardBack.jpg" alt="Fun Card Back"
+                                    class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                                <img src="/front and back Cards/funCardFront.webp" alt="Fun Card Front"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                            </div>
+                            <div class="mt-5 flex flex-col justify-center items-center">
+                                <h3 class="text-2xl font-extrabold mt-4">Fun Cards</h3>
+                                <p class="mt-4 w-48 text-center font-thin text-xl">20 Fun Cards to spark the romance</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide flex flex-col items-center justify-center w-full">
+                            <div class="w-56 h-80 relative mx-auto">
+                                <img src="/front and back Cards/flirtCardBack.jpg" alt="Flirty Card Back"
+                                    class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                                <img src="/front and back Cards/flirtCardFront.webp" alt="Flirty Card Front"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                            </div>
+                            <div class="mt-5 flex flex-col justify-center items-center">
+                                <h3 class="text-2xl font-extrabold mt-4">Flirty Cards</h3>
+                                <p class="mt-4 w-48 text-center font-thin text-xl">20 Flirty Cards to get up close and
+                                    intimate</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slide flex flex-col items-center justify-center w-full">
+                            <div class="w-56 h-80 relative mx-auto">
+                                <img src="/front and back Cards/RisqueCardback.jpg" alt="Risqué Card Back"
+                                    class="absolute inset-0 w-full h-full object-cover mx-auto rounded-2xl cursor-pointer">
+                                <img src="/front and back Cards/RisqueCardfront.webp" alt="Risqué Card Front"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 hover:opacity-100 mx-auto rounded-2xl">
+                            </div>
+                            <div class="mt-5 flex flex-col justify-center items-center">
+                                <h3 class="text-2xl font-extrabold mt-4">Risqué Cards</h3>
+                                <p class="mt-4 w-48 text-center font-thin text-xl">20 Risqué Cards to drive each other
+                                    wild</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="prev"
+                        class="new-slider-nav new-slider-nav-prev absolute left-2 top-1/2 transform -translate-y-1/2 text-3xl cursor-pointer"
+                        style="right: 350px;">
+                        <span class="material-symbols-outlined ">arrow_back_ios</span>
+                    </div>
+                    <div id="next"
+                        class="new-slider-nav new-slider-nav-next absolute right-2 top-1/2 transform -translate-y-1/2 text-3xl cursor-pointer"
+                        style="left: 350px;">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="pb-12">
+        <div class="container flex flex-col mx-auto px-4 text-center items-center">
+            <h2 class="text-4xl lg:text-5xl font-black mb-1">Game <br />Highlights</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-24 mt-10 w-56 lg:w-104 sm:w-3/4 items-center">
+                <div class="flex flex-col items-center w-full sm:w-auto mb-4">
+                    <img src="/icons/3 Levels, 60 Cards (2).jpg" alt="Levels" class="mb-2" />
+                    <p class="text-2xl lg:text-3xl font-black w-48">3 Levels, <br>
+                        <span class="text-3xl lg:text-4xl font-thin">60 Cards</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center w-full sm:w-auto mb-4">
+                    <img src="/icons/For Adults Ages 21+.jpg" alt="Age" class="mb-2" />
+                    <p class="text-2xl lg:text-3xl font-black w-48">For Adults <br>
+                        <span class="text-3xl lg:text-4xl font-thin">Ages 21+</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center w-full sm:w-auto mb-4">
+                    <img src="/icons/Crafted for couples.jpg" alt="Couples" class="mb-2" />
+                    <p class="text-2xl lg:text-3xl font-black w-48">Crafted <br>
+                        <span class="text-3xl lg:text-4xl font-thin">for Couples</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center w-full sm:w-auto mb-4">
+                    <img src="/holidays-party.png" alt="Fun" class="mb-2" />
+                    <p class="text-2xl lg:text-3xl font-black w-48">100% <br>
+                        <span class="text-3xl lg:text-4xl font-thin">Fun</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelector(".slides");
+        const totalSlides = slides.children.length;
+        const dotsContainer = document.querySelector(".dots");
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => setCurrentSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll(".dot");
+
+        function setCurrentSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        document.querySelector(".slider-nav-prev").addEventListener("click", () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        document.querySelector(".slider-nav-next").addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 3000);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.slider-container');
+            const slides = Array.from(document.querySelectorAll('.flex'));
+            const nextButton = document.getElementById('next');
+            const prevButton = document.getElementById('prev');
+            let currentIndex = 0;
+
+            function updateSlider(index) {
+                slider.scrollTo({
+                    left: slides[index].offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider(currentIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider(currentIndex);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.slider-container');
+            const slides = Array.from(document.querySelectorAll('.flex'));
+            const nextButton = document.getElementById('next');
+            const prevButton = document.getElementById('prev');
+            let currentIndex = 0;
+
+            function updateSlider(index) {
+                slider.scrollTo({
+                    left: slides[index].offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider(currentIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider(currentIndex);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.getElementById('slides');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const totalSlides = slides.children.length;
+            let currentIndex = 0;
+
+            function updateSlidePosition() {
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = totalSlides - 1; // Loop to the last slide
+                }
+                updateSlidePosition();
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop back to the first slide
+                }
+                updateSlidePosition();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

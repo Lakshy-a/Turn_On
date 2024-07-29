@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .topbanner {
+            max-width: 100%;
+        }
+
+        .topbanner img {
+            width: 100%;
+        }
+
+        .textcontent {
+            text-align: center;
+            /* background-color: aqua; */
+            margin: 3% auto;
+            width: 54%;
+            font-family: sans-serif;
+        }
+
+        .textcontent h1 {
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            font-weight: 1000;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .textcontent p {
+            width: 97%;
+            font-size: 20px;
+        }
+
+        .sliderbanner {
+            display: flex;
+            height: 62vh;
+            background-color: black;
+            padding: 0px;
+        }
+
+        .s {
+            width: 45%;
+            /* background-color: aquamarine; */
+            /* margin-top: 1%; */
+            position: relative;
+        }
+
+        .slider {
+            width: 60%;
+            height: 64%;
+            overflow: hidden;
+            position: relative;
+            /* Ensure positioning context for buttons */
+            margin: auto;
+            /* Center the slider */
+            margin-right: 10%;
+            margin-top: 1%;
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .prev,
+        .next,
+        .cardprev,
+        .cardnext {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+            /* Adjust left position */
+        }
+
+        .next {
+            right: 10px;
+            /* Adjust right position */
+        }
+
+        /* Slider Dots */
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            margin-left: 16%;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            margin: 0 5px;
+            background-color: brown;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active-dot {
+            background-color: white;
+        }
+
+        /* Text Part */
+        .textpart {
+            color: aliceblue;
+            margin-top: 2%;
+            width: 55%;
+            /* background-color: green; */
+        }
+
+        .textpart p {
+            width: 89%;
+            font-size: 16px;
+        }
+
+        .textpart h2 {
+            font-size: 1.9rem;
+            /* margin-bottom: 0; */
+        }
+
+        /* Price Part */
+        .pricepart {
+            display: flex;
+            column-gap: 10px;
+            margin-top: 48px;
+        }
+
+        .pricepart b,
+        s {
+            font-size: 22px;
+        }
+
+        .pricepart span {
+            background-color: brown;
+            color: white;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .thirdsection {
+            width: 100%;
+            height: 92vh;
+        }
+
+        .thirdheading {
+            display: flex;
+            height: 20%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thirdheading span {
+            font-size: 2.2rem;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+
+        .videopart {
+            width: 100%;
+            height: 80%;
+            background-color: black;
+            box-sizing: border-box;
+            padding: 4px;
+        }
+
+        .innervideopart {
+            width: 50%;
+            /* max-width: 80%; */
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .innervideopart video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mobilefoursection {
+            display: none;
+        }
+
+        .foursection {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .fourheading {
+            display: flex;
+            flex-direction: column;
+            height: 30%;
+            justify-content: center;
+
+        }
+
+        .fourheading span {
+            font-size: 2.2rem;
+            font-weight: 1000;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+        .fourcards {
+            display: flex;
+            justify-content: space-around;
+            /* Distribute space around the cards */
+            ;
+            padding: 20px;
+            /* background-color: blueviolet; */
+            width: 70%;
+            height: 70%;
+            margin-left: 15%;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 30%;
+            /* Adjust width as needed */
+        }
+
+        .fourcards img {
+            width: 100%;
+            /* Ensure images are responsive */
+            max-width: 240px;
+            /* Set a maximum width for images */
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .fourcards h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .fourcards span {
+            font-size: 1rem;
+        }
+
+        .cardheading {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .fivesection {
+            height: 70vh;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+        .fiveheading {
+            display: flex;
+            flex-direction: column;
+            height: 30%;
+            justify-content: center;
+
+        }
+
+        .fiveheading span {
+            font-size: 2.2rem;
+            font-weight: 1000;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .fiveheading .game {
+            font-weight: 1000;
+            font-size: 3rem;
+
+        }
+
+        .fiveheading span {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fivecards {
+            display: flex;
+            justify-content: space-around;
+            /* Distribute space around the cards */
+            padding: 20px;
+            /* background-color: blueviolet; */
+            width: 74%;
+            height: 70%;
+            margin-left: 13%;
+        }
+
+        .fivecard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 34%;
+            /* Adjust width as needed */
+        }
+
+        .fivecards img {
+            width: 100%;
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .fivecards h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .fivecards span {
+            font-size: 1.5rem;
+        }
+
+        .cardheading {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .textpart .addbtn {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+
+
+        .fivesection {
+            margin-top: 12%;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1380px) {
+            .textcontent {
+                width: 70%;
+
+            }
+
+            .textcontent h1 {
+                font-size: 1.7rem;
+            }
+
+            .sliderbanner {
+
+                height: 82vh;
+
+            }
+
+            .slider {
+                width: 60%;
+                height: 60%;
+                margin-top: 3%;
+            }
+
+            .textpart {
+                color: aliceblue;
+                margin-top: 4%;
+                width: 55%;
+
+            }
+
+            .textpart p {
+                width: 97%;
+
+            }
+
+            .textpart h2 {
+                font-size: 1.4rem;
+
+            }
+
+            .thirdheading span {
+                font-size: 1.6rem;
+            }
+
+
+            .fourheading span {
+                font-size: 1.6rem;
+            }
+
+
+            .fourcards {
+                width: 90%;
+                margin-left: 3%;
+            }
+
+
+            .fiveheading span {
+                font-size: 1.6rem;
+            }
+
+            .fiveheading .game {
+                font-size: 2rem;
+
+            }
+
+            .fivecards {
+                width: 90%;
+                margin-left: 3%;
+            }
+
+
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .textcontent {
+                width: 98%;
+
+            }
+
+            .textcontent h1 {
+                font-size: 1.2rem;
+            }
+
+            .textcontent p {
+                font-size: 16px;
+            }
+
+            .sliderbanner {
+
+                height: 82vh;
+
+            }
+
+            .textpart {
+                color: aliceblue;
+                margin-top: 5%;
+                width: 55%;
+
+            }
+
+            .textpart p {
+                width: 98%;
+
+            }
+
+            .textpart h2 {
+                font-size: 1.1rem;
+
+            }
+
+
+            .slider {
+                width: 70%;
+                height: 68%;
+                margin-top: 0px;
+            }
+
+            .prev {
+                left: 0px;
+            }
+
+            .next {
+                right: 0px;
+            }
+
+
+            .thirdheading span {
+                font-size: 1.2rem;
+            }
+
+
+            .fourheading span {
+                font-size: 1.2rem;
+            }
+
+
+            .fourcards {
+                width: 90%;
+                margin-left: 2%;
+                margin-top: 0px;
+            }
+
+            .fivesection {
+                margin-top: 0px;
+                height: 70vh;
+                padding-top: 130px;
+            }
+
+            .fiveheading span {
+                font-size: 1.2rem;
+            }
+
+            .fiveheading .game {
+                font-size: 2rem;
+
+            }
+
+            .fivecards {
+                width: 80%;
+                margin-left: 8%;
+            }
+
+            .cardheading h2 {
+                font-size: 1.0rem;
+            }
+
+            .fivecards span {
+                font-size: 1.0rem;
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .textcontent {
+                width: 70%;
+
+            }
+
+            .textcontent h1 {
+                font-size: 1.2rem;
+            }
+
+            .textcontent p {
+                font-size: 15px;
+                width: 99%;
+            }
+
+            .sliderbanner {
+                height: 140vh;
+                flex-direction: column;
+            }
+
+            .s {
+                height: 50%;
+                width: 100%;
+                margin-top: 0px;
+            }
+
+
+            .textpart {
+                color: aliceblue;
+                margin-top: 5%;
+                width: 100%;
+                height: 50%;
+                margin-left: 4%;
+            }
+
+            .textpart p {
+                width: 89%;
+                font-size: 14px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            .textpart h2 {
+                font-size: 1.3rem;
+                width: 70%;
+                margin-bottom: 0px;
+            }
+
+            .slider {
+                width: 100%;
+                height: 100%;
+                margin-top: 1%;
+                margin-right: 10%;
+            }
+
+            .dots {
+                margin-left: 0px;
+            }
+
+            .thirdheading span {
+                font-size: 1.2rem;
+            }
+
+            .mobilefoursection {
+                display: block;
+                height: 100vh;
+            }
+
+            .fourheading {
+                margin: auto;
+                width: 100%;
+            }
+
+            .fourheading span {
+                font-size: 1.2rem;
+            }
+
+
+            .fourcards {
+                width: 60%;
+                height: 96%;
+                /*94 */
+                overflow: hidden;
+                position: relative;
+                /* Ensure positioning context for buttons */
+                margin: auto;
+                /* Center the slider */
+                margin-right: 15%;
+                margin-top: 1%;
+            }
+
+            .cardslide {
+                display: flex;
+                height: 100%;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .card {
+                min-width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+            }
+
+            .card img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            .prev,
+            .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.1);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 18px;
+                z-index: 1;
+            }
+
+            .cardprev {
+                left: 10px;
+                color: black;
+                background-color: transparent;
+                font-size: 25px;
+            }
+
+            .cardnext {
+                right: 10px;
+                color: black;
+                background-color: transparent;
+                font-size: 25px;
+            }
+
+            .foursection {
+                display: none;
+
+            }
+
+            .fivecards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 10px;
+                margin-left: 9%;
+            }
+
+            .fivecard {
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .cardimg {
+                height: 40%;
+            }
+
+            .fivecard img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .cardheading {
+                margin-top: 10px;
+            }
+
+            .cardheading h2 {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            .cardheading span {
+                font-size: 1.2rem;
+            }
+
+            .fiveheading span {
+                font-size: 1.2rem;
+            }
+
+            .fiveheading .game {
+                font-size: 2rem;
+
+            }
+
+            .fivesection {
+                height: 100vh;
+                padding-top: 20px;
+            }
+        }
+
+
+
+        @media(max-width: 559px) {
+            .textcontent h1 {
+                font-size: 1.4rem;
+            }
+
+            .textcontent p {
+                font-size: 12.5px;
+            }
+
+            .sliderbanner {
+                height: 140vh;
+            }
+
+            .s {
+                height: 40%;
+                width: 100%;
+                margin-top: 0px;
+            }
+
+            .slider {
+                width: 100%;
+                height: 100%;
+                margin-top: 1%;
+                margin-right: 10%;
+            }
+
+            .dots {
+                margin-top: 0px;
+            }
+
+            .dot {
+                width: 5px;
+                height: 5px;
+            }
+
+            .textpart {
+                margin-top: 5%;
+                height: 60%;
+                margin-left: 4%;
+            }
+
+            .textpart h2 {
+                font-size: 1.2rem;
+                width: 80%;
+                text-transform: uppercase;
+                margin-top: 40px;
+            }
+
+            .textpart p {
+                width: 89%;
+                font-size: 13.8px;
+                margin-top: 20px;
+            }
+
+            .thirdheading span {
+                font-size: 1.4rem;
+            }
+
+            .fourheading {
+                width: 90%;
+            }
+
+            .fourheading span {
+                font-size: 1.4rem;
+            }
+
+            .fourcards {
+                width: 80%;
+                margin-right: 5%;
+            }
+
+            .fivesection {
+                margin-top: 0px;
+
+            }
+
+            .fivecards {
+                padding-top: 0px;
+            }
+
+            .textpart .addbtn {
+                width: 150px;
+                font-size: 15px;
+
+            }
+
+            .fivesection {
+                margin-top: 12%;
+            }
+
+        }
+
+        @media(min-width: 320px) and (max-width: 400px) {
+
+            .textcontent h1 {
+                font-size: 1.2rem;
+            }
+
+            .textpart {
+                margin-top: 5%;
+                height: 60%;
+                margin-left: 4%;
+            }
+
+            .textpart h2 {
+                font-size: 1.0rem;
+            }
+
+            .textpart p {
+                font-size: 12px;
+            }
+
+            .thirdheading span {
+                font-size: 1.2rem;
+            }
+
+            .fourheading {
+                width: 94%;
+            }
+
+            .fourheading span {
+                font-size: 1.2rem;
+            }
+
+            .fourcards {
+                width: 100%;
+                margin-right: 5%;
+                padding: 0px;
+            }
+
+
+            .cardprev {
+                left: 0px;
+            }
+
+            .cardnext {
+                right: 0px;
+            }
+
+            .fivecards {
+                width: 80%;
+            }
+
+            .cardheading h2 {
+                margin: 0;
+                font-size: 1.0rem;
+            }
+
+            .cardheading span {
+                font-size: 1.0rem;
+            }
+        }
+    </style>
+    <link rel="canonical" href="https://my-store-315.myshopify.com/pages/turnonpage">
+</head>
+
+<body>
+
+    <div id="shopify-section-Turnon_topbanner" class="shopify-section">
+        <div class="topbanner">
+
+
+            <img src="/BannerImages/desktop.jpg"
+                alt="Banner Image" class="desktop-image bannerimage" />
+            <img src="/BannerImages/mobile.webp"
+                alt="Banner Image" class="mobile-image bannerimage" />
+        </div>
+
+        <style>
+            @media(max-width: 767px) {
+                .desktop-image {
+                    display: none;
+                }
+            }
+
+            @media(min-width: 768px) {
+                .mobile-image {
+                    display: none;
+                }
+            }
+        </style>
+    </div>
+    <div id="shopify-section-Turnon_textcontent" class="shopify-section">
+        <div>
+            <div class="textcontent">
+                <h1>Crafted for your Wildest Dreams</h1>
+                <p>It all starts with a naughty glance, a whisper of anticipation. You laugh, tease and explore each
+                    other’s desires as you flip through the cards of Turn On. The Game makes every move, every kiss and
+                    every whisper of your secret desires feel like a thrilling discovery.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <div id="shopify-section-Turnon_slidebanner" class="shopify-section">
+        <div class="sliderbanner">
+            <div class="s">
+                <div class="slider">
+                    <div class="slides">
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide1_1024x1024.png?v=1722237138"
+                                alt="Slide 1" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide2_1024x1024.jpg?v=1722237136"
+                                alt="Slide 2" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide3_1024x1024.jpg?v=1722237137"
+                                alt="Slide 3" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide4_1024x1024.jpg?v=1722237137"
+                                alt="Slide 4" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide5_1024x1024.jpg?v=1722237137"
+                                alt="Slide 5" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide6_1024x1024.jpg?v=1722237137"
+                                alt="Slide 6" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide7_1024x1024.jpg?v=1722237136"
+                                alt="Slide 7" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide8_1024x1024.jpg?v=1722237137"
+                                alt="Slide 8" />
+                        </div>
+
+
+
+                        <div class="slide">
+                            <img src="//my-store-315.myshopify.com/cdn/shop/files/slide9_1024x1024.jpg?v=1722237136"
+                                alt="Slide 9" />
+                        </div>
+
+                    </div>
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+                <div class="dots"></div>
+            </div>
+
+            <div class="textpart">
+                <h2>Durex Playthings Turn On Game Card for Couples</h2>
+                <p>Are you ready to spice up your game nights with "Turn On"—the flirty card game that takes Truth or
+                    Dare to the next level? With 60 cards filled with fun, flirty, and risqué questions and actions, it
+                    is crafted for you to express your deepest desires and then bring them alive. As you lay the cards,
+                    get ready to lay your desires for them to know all your secrets. There are no losers in this game,
+                    only winners. So, come together with your partner, and let the moments unfold with "Turn On"!</p>
+                <div class="pricepart">
+                    <s>Rs.1950/</s> <b>Rs.999/-</b> <span>50% OFF</span>
+                </div>
+                <button class="addbtn">Add to cart</button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div id="shopify-section-Turnon_thirdsection" class="shopify-section">
+        <div class="thirdsection">
+            <div class="thirdheading">
+                <span>FLIP THE CARDS AND</span>
+                <span>LET YOUR DESIRES UNFOLD</span>
+            </div>
+            <div class="videopart">
+                <div class="innervideopart">
+                    <video controls autoplay muted loop>
+                        <source src="https://cdn.shopify.com/videos/c/o/v/0f0c9ade19d14ab6a87540ceb9f97916.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="shopify-section-Turnon_forthsection" class="shopify-section"><!-- Mobile Four Section -->
+        <div class="mobilefoursection">
+            <div class="fourheading">
+                <span>Level up from Fun and Flirty to Risqué and</span>
+                <span>Feel the rush of your wildest dreams!</span>
+            </div>
+            <div class="fourcards">
+                <div class="cardslide">
+                    <div class="card">
+                        <div><img
+                                src="//my-store-315.myshopify.com/cdn/shop/files/Fun_Card_back_1024x1024.jpg?v=1722237136"
+                                alt="Fun Cards" /></div>
+                        <div class="cardheading">
+                            <h2>Fun Cards</h2>
+                            <span>20 Fun Cards to spark</span>
+                            <span>the romance</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div><img
+                                src="//my-store-315.myshopify.com/cdn/shop/files/Flirty_Card_back_1024x1024.jpg?v=1722237136"
+                                alt="Flirty Cards" /></div>
+                        <div class="cardheading">
+                            <h2>Flirty Cards</h2>
+                            <span>20 Flirty Cards to get up</span>
+                            <span>close and intimate</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div><img
+                                src="//my-store-315.myshopify.com/cdn/shop/files/RisqueCard_back_1024x1024.jpg?v=1722237136"
+                                alt="Risqué Cards" /></div>
+                        <div class="cardheading">
+                            <h2>Risqué Cards</h2>
+                            <span>20 Risqué Cards to drive</span>
+                            <span>each other wild</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="cardprev" onclick="cardmoveSlide(-1)">&#10094;</button>
+                <button class="cardnext" onclick="cardmoveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Desktop Four Section -->
+        <div class="foursection">
+            <div class="fourheading">
+                <span>Level up from Fun and Flirty to Risqué and</span>
+                <span>Feel the rush of your wildest dreams!</span>
+            </div>
+            <div class="fourcards">
+                <div class="card">
+                    <div><img src="//my-store-315.myshopify.com/cdn/shop/files/Fun_Card_back_1024x1024.jpg?v=1722237136"
+                            alt="Fun Cards" /></div>
+                    <div class="cardheading">
+                        <h2>Fun Cards</h2>
+                        <span>20 Fun Cards to spark</span>
+                        <span>the romance</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img
+                            src="//my-store-315.myshopify.com/cdn/shop/files/Flirty_Card_back_1024x1024.jpg?v=1722237136"
+                            alt="Flirty Cards" /></div>
+                    <div class="cardheading">
+                        <h2>Flirty Cards</h2>
+                        <span>20 Flirty Cards to get up</span>
+                        <span>close and intimate</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div><img
+                            src="//my-store-315.myshopify.com/cdn/shop/files/RisqueCard_back_1024x1024.jpg?v=1722237136"
+                            alt="Risqué Cards" /></div>
+                    <div class="cardheading">
+                        <h2>Risqué Cards</h2>
+                        <span>20 Risqué Cards to drive</span>
+                        <span>each other wild</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div id="shopify-section-Turnon_fifthsection" class="shopify-section">
+        <div class="fivesection">
+            <div class="fiveheading">
+                <span class="game">GAME</span>
+                <span>HIGHLIGHTS</span>
+            </div>
+            <div class="fivecards">
+                <div class="fivecard">
+                    <div class="cardimg">
+                        <img src="//my-store-315.myshopify.com/cdn/shop/files/3_Levels_60_Cards_1024x1024.png?v=1722237136"
+                            alt="Card 1" />
+                    </div>
+                    <div class="cardheading">
+                        <h2>3 LEVELS</h2>
+                        <span>60 CARDS</span>
+                    </div>
+                </div>
+                <div class="fivecard">
+                    <div class="cardimg">
+                        <img src="//my-store-315.myshopify.com/cdn/shop/files/For_Adults_Ages_21_1024x1024.png?v=1722237136"
+                            alt="Card 2" />
+                    </div>
+                    <div class="cardheading">
+                        <h2>FOR ADULTS</h2>
+                        <span>AGES 21+</span>
+                    </div>
+                </div>
+                <div class="fivecard">
+                    <div class="cardimg">
+                        <img src="//my-store-315.myshopify.com/cdn/shop/files/Crafted_for_couples_1024x1024.png?v=1722237136"
+                            alt="Card 3" />
+                    </div>
+                    <div class="cardheading">
+                        <h2>CRAFTED</h2>
+                        <span>FOR COUPLES</span>
+                    </div>
+                </div>
+                <div class="fivecard">
+                    <div class="cardimg">
+                        <img src="//my-store-315.myshopify.com/cdn/shop/files/100_1024x1024.jpg?v=1722237136"
+                            alt="Card 4" />
+                    </div>
+                    <div class="cardheading">
+                        <h2>100%</h2>
+                        <span>FUN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            const dots = document.querySelectorAll('.dot');
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active-dot', i === currentSlide);
+            });
+        }
+
+        function moveSlide(step) {
+            showSlide(currentSlide + step);
+        }
+
+        function createDots() {
+            const dotContainer = document.querySelector('.dots');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            for (let i = 0; i < 1; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => showSlide(i));
+                dotContainer.appendChild(dot);
+            }
+        }
+
+        createDots();
+        showSlide(currentSlide);
+
+    </script>
+    <script>
+        let fourcurrentSlide = 0;
+
+        function cardshowSlide(fourindex) {
+            const slides = document.querySelector('.cardslide');
+            const totalSlides = document.querySelectorAll('.card').length;
+            const dots = document.querySelectorAll('.dot');
+
+            if (fourindex >= totalSlides) {
+                fourcurrentSlide = 0;
+            } else if (fourindex < 0) {
+                fourcurrentSlide = totalSlides - 1;
+            } else {
+                fourcurrentSlide = fourindex;
+            }
+
+            const offset = -fourcurrentSlide * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active-dot', i === fourcurrentSlide);
+            });
+        }
+
+        function cardmoveSlide(step) {
+            cardshowSlide(fourcurrentSlide + step);
+        }
+
+        function createDots() {
+            const dotContainer = document.querySelector('.dots');
+            const totalSlides = document.querySelectorAll('.card').length;
+
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => cardshowSlide(i));
+                dotContainer.appendChild(dot);
+            }
+        }
+
+        createDots();
+        cardshowSlide(fourcurrentSlide);
+    </script>
+</body>
+
+</html>
